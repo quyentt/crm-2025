@@ -3954,6 +3954,7 @@ a.other-action_item:hover {
   font-size: 15px;
   height: calc(100vh - 155px);
   overflow-y: scroll;
+  padding-top: 10px;
 }
 
 .sidebar-menu-item {
