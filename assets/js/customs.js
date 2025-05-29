@@ -67,16 +67,48 @@ $(document).ready(function () {
   });
   var dataPosition = localStorage.getItem("dataPosition");
   console.log(dataPosition);
+
+  // myTab-------------------------------------------------------------------------------
+  const actionOuter = document.querySelector(".action-inner");
+
+  function updateActionInnerBySlide(slideIndex) {
+    const slides = document.querySelectorAll(".content-slider .swiper-slide");
+    const activeSlide = slides[slideIndex];
+    if (!activeSlide) return;
+
+    const funcEle = activeSlide.querySelector(".function");
+    if (!funcEle) {
+      actionOuter.innerHTML = "";
+      return;
+    }
+
+    const activeLink = funcEle.querySelector(".myTab-header-link.active");
+    if (activeLink) {
+      const defaultTabId = activeLink.getAttribute("data-myTab");
+      const defaultTab = funcEle.querySelector("#" + defaultTabId);
+      if (defaultTab) {
+        const featureActionDefault = defaultTab.querySelector(
+          ".feature-action-group"
+        );
+        if (featureActionDefault) {
+          actionOuter.innerHTML = featureActionDefault.innerHTML;
+          return;
+        }
+      }
+    }
+
+    actionOuter.innerHTML = "";
+  }
+
   var swiper = new Swiper(".label-slider", {
     spaceBetween: 0,
     slidesPerView: "auto",
     freeMode: false,
     watchSlidesProgress: false,
-    // simulateTouch: false
   });
 
   var swiper2 = new Swiper(".content-slider", {
-    initialSlide: dataPosition,
+    initialSlide: dataPosition || 0,
     autoHeight: true,
     spaceBetween: 0,
     navigation: false,
@@ -84,7 +116,45 @@ $(document).ready(function () {
     thumbs: {
       swiper: swiper,
     },
+    on: {
+      init: function () {
+        updateActionInnerBySlide(this.activeIndex);
+      },
+      slideChange: function () {
+        updateActionInnerBySlide(this.activeIndex);
+      },
+    },
   });
+  document
+    .querySelectorAll(".sidebar-menu-sub-content a[data-position]")
+    .forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const index = parseInt(this.getAttribute("data-position"), 10);
+        if (!isNaN(index)) {
+          swiper2.slideTo(index);
+
+          document
+            .querySelectorAll(".sidebar-menu-sub-content a")
+            .forEach((el) => el.classList.remove("active"));
+          this.classList.add("active");
+        }
+      });
+    });
+  swiper2.on("slideChange", function () {
+    const activeIndex = this.activeIndex;
+
+    document.querySelectorAll(".sidebar-menu-sub-content a").forEach((a) => {
+      const pos = parseInt(a.getAttribute("data-position"), 10);
+      if (pos === activeIndex) {
+        a.classList.add("active");
+      } else {
+        a.classList.remove("active");
+      }
+    });
+  });
+
   var swiperInwiper = new Swiper(".tab-header-nav", {
     watchSlidesProgress: true,
     spaceBetween: 0,
@@ -97,18 +167,51 @@ $(document).ready(function () {
     autoHeight: true,
     spaceBetween: 0,
     navigation: false,
-    // noSwipingClass: ["no-swiper"],
+    noSwipingClass: ["no-swiper"],
     thumbs: {
       swiper: swiperInwiper,
     },
   });
 
-  /* swiper events */
-  swiperInwiper.on("slideChangeTransitionStart", function () {
-    console.log("slideChangeTransitionStart");
-  });
-  swiperInwiper2.on("slideChangeTransitionStart", function () {
-    console.log("slideChangeTransitionStart");
+  // Xử lý click tab
+  const myFunctionWrap = document.querySelectorAll(".function");
+
+  myFunctionWrap.forEach((funcEle) => {
+    const myTabLink = funcEle.querySelectorAll(".myTab-header-link");
+    const myTabItem = funcEle.querySelectorAll(".myTab-item");
+
+    myTabLink.forEach((el) => {
+      el.addEventListener("click", function (event) {
+        event.preventDefault();
+        const btn = event.currentTarget;
+        const dataTarget = btn.getAttribute("data-myTab");
+
+        myTabItem.forEach((el) => el.classList.remove("show"));
+        myTabLink.forEach((el) => el.classList.remove("active"));
+
+        const currentTab = funcEle.querySelector("#" + dataTarget);
+        if (currentTab) {
+          currentTab.classList.add("show");
+        }
+        btn.classList.add("active");
+
+        const parentSlide = funcEle.closest(".swiper-slide");
+        if (
+          parentSlide &&
+          parentSlide.classList.contains("swiper-slide-active")
+        ) {
+          const featureAction = currentTab
+            ? currentTab.querySelector(".feature-action-group")
+            : null;
+
+          if (featureAction && actionOuter) {
+            actionOuter.innerHTML = featureAction.innerHTML;
+          } else if (actionOuter) {
+            actionOuter.innerHTML = "";
+          }
+        }
+      });
+    });
   });
 
   // upload image vs video---------------------------------------------------
@@ -226,63 +329,6 @@ $(document).ready(function () {
       }
     });
   }
-  // myTab-------------------------------------------------------------------------------
-  const myFunctionWrap = document.querySelectorAll(".function");
-
-  myFunctionWrap.forEach((funcEle) => {
-    const myTabLink = funcEle.querySelectorAll(".myTab-header-link");
-    const myTabItem = funcEle.querySelectorAll(".myTab-item");
-
-    const actionOuter = document.querySelector(".action-inner");
-
-    // 1. Khởi tạo: lấy tab active ban đầu (link có class 'active')
-    const activeLink = funcEle.querySelector(".myTab-header-link.active");
-    if (activeLink) {
-      const defaultTabId = activeLink.getAttribute("data-myTab");
-      const defaultTab = funcEle.querySelector("#" + defaultTabId);
-      if (defaultTab) {
-        const featureActionDefault = defaultTab.querySelector(
-          ".feature-action-group"
-        );
-        if (featureActionDefault && actionOuter) {
-          actionOuter.innerHTML = featureActionDefault.innerHTML;
-        }
-      }
-    }
-
-    // 2. Thêm sự kiện click cho từng tab link
-    myTabLink.forEach((el) => {
-      el.addEventListener("click", showMyTab);
-    });
-
-    function showMyTab(event) {
-      event.preventDefault();
-      const btn = event.currentTarget;
-      const dataTarget = btn.getAttribute("data-myTab");
-
-      // Ẩn tất cả tab content và bỏ active tab link
-      myTabItem.forEach((el) => el.classList.remove("show"));
-      myTabLink.forEach((el) => el.classList.remove("active"));
-
-      // Hiện tab tương ứng
-      const currentTab = funcEle.querySelector("#" + dataTarget);
-      if (currentTab) {
-        currentTab.classList.add("show");
-      }
-      btn.classList.add("active");
-
-      // Lấy feature-action-group của tab hiện tại
-      const featureAction = currentTab
-        ? currentTab.querySelector(".feature-action-group")
-        : null;
-
-      if (featureAction && actionOuter) {
-        actionOuter.innerHTML = featureAction.innerHTML;
-      } else if (actionOuter) {
-        actionOuter.innerHTML = ""; // Xoá nếu không có nút
-      }
-    }
-  });
 
   // select custom -----------------------------------------------------------
   var x, i, j, l, ll, selElmnt, a, b, c;
