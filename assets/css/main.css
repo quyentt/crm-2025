@@ -4004,18 +4004,18 @@ a.other-action_item:hover {
 }
 
 .sidebar-menu-sub a:first-child {
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .sidebar-menu-sub a {
   display: block;
-  margin-left: 15px;
+  margin-left: 20px;
   border-left: solid 1px #989898;
   padding-left: 35px;
   font-size: 15px;
   position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   color: var(--color-text-3-80);
 }
 
@@ -4031,13 +4031,13 @@ a.other-action_item:hover {
 
 .sidebar-menu-sub a::before {
   content: "";
-  width: 20px;
+  width: 15px;
   height: 1px;
   background-color: #989898;
   border-radius: 100%;
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 17px;
 }
 .sidebar-menu-sub a::after {
   content: "";
@@ -4046,8 +4046,8 @@ a.other-action_item:hover {
   background-color: #989898;
   border-radius: 100%;
   position: absolute;
-  left: 17px;
-  top: 17px;
+  left: 15px;
+  top: 14px;
 }
 
 .sidebar-menu-sub a:hover::before,
@@ -4120,4 +4120,7 @@ a.other-action_item:hover {
   font-size: 16px;
   font-weight: normal;
   margin-top: 10px;
+}
+.action-inner .btn {
+  border-radius: 6px;
 }
