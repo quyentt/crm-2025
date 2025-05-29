@@ -3957,7 +3957,7 @@ a.other-action_item:hover {
 }
 
 .sidebar-menu-item {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .sidebar-menu-header {
@@ -4122,4 +4122,7 @@ a.other-action_item:hover {
 }
 .action-inner .btn {
   border-radius: 6px;
+}
+.sidebar-menu-header:not(.collapsed) {
+  background: rgba(26, 113, 232, 0.3);
 }
