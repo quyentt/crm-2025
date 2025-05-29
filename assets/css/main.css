@@ -4125,5 +4125,5 @@ a.other-action_item:hover {
   border-radius: 6px;
 }
 .sidebar-menu-header:not(.collapsed) {
-  background: rgba(26, 113, 232, 0.3);
+  background: rgba(26, 113, 232, 0.1);
 }
