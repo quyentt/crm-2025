@@ -4151,6 +4151,9 @@ a.other-action_item:hover {
   font-weight: 600;
   line-height: 22px;
 }
+.dashboard-tinnoibo .title:hover {
+  color: var(--color-link);
+}
 .dashboard-tinnoibo .label {
   background: var(--color-main);
   position: relative;
