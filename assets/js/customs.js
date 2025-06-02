@@ -132,28 +132,45 @@ $(document).ready(function () {
         e.preventDefault();
 
         const index = parseInt(this.getAttribute("data-position"), 10);
-        if (!isNaN(index)) {
+        const href = this.getAttribute("href");
+
+        if (isNaN(index) || !href) return;
+
+        // Xác định pathname hiện tại (VD: /nhansu/nhansu-chitiet.html)
+        const currentPath = window.location.pathname.replace(/\/+$/, ""); // bỏ dấu '/' cuối nếu có
+        const targetUrl = new URL(href, window.location.origin);
+        const targetPath = targetUrl.pathname.replace(/\/+$/, "");
+
+        if (currentPath === targetPath) {
+          // Đã ở đúng trang, chỉ slide
           swiper2.slideTo(index);
 
           document
             .querySelectorAll(".sidebar-menu-sub-content a")
             .forEach((el) => el.classList.remove("active"));
           this.classList.add("active");
+        } else {
+          // Chưa ở đúng trang, thêm ?slide=X rồi chuyển hướng
+          targetUrl.searchParams.set("slide", index);
+          window.location.href = targetUrl.toString();
         }
       });
     });
-  swiper2.on("slideChange", function () {
-    const activeIndex = this.activeIndex;
+  // Lấy slide index từ URL (?slide=0)
+  const params = new URLSearchParams(window.location.search);
+  const slideIndex = parseInt(params.get("slide"), 10);
 
-    document.querySelectorAll(".sidebar-menu-sub-content a").forEach((a) => {
-      const pos = parseInt(a.getAttribute("data-position"), 10);
-      if (pos === activeIndex) {
-        a.classList.add("active");
-      } else {
-        a.classList.remove("active");
-      }
-    });
-  });
+  // Nếu có tham số hợp lệ, slide đến đó
+  if (!isNaN(slideIndex)) {
+    swiper2.slideTo(slideIndex);
+
+    // Xóa ?slide=... khỏi URL sau khi xử lý xong, mà không reload
+    const url = new URL(window.location.href);
+    url.searchParams.delete("slide");
+
+    // Cập nhật URL hiển thị mà không load lại trang
+    window.history.replaceState({}, document.title, url.pathname + url.search);
+  }
 
   var swiperInwiper = new Swiper(".tab-header-nav", {
     watchSlidesProgress: true,
@@ -297,10 +314,14 @@ $(document).ready(function () {
   //Tự động thay đổi màu sắc box chức năng-------------------------------------
   const featureEle = document.querySelectorAll(" .feature-box");
 
-  for (let i = 0; i < featureEle.length; i++) {
-    let randomNum = Math.floor(Math.random() * 10 + 1);
+  // for (let i = 0; i < featureEle.length; i++) {
+  //   let randomNum = Math.floor(Math.random() * 10 + 1);
 
-    featureEle[i].setAttribute("data-bg", randomNum);
+  //   featureEle[i].setAttribute("data-bg", randomNum);
+  // }
+  for (let i = 0; i < featureEle.length; i++) {
+    let number = (i % 10) + 1;
+    featureEle[i].setAttribute("data-bg", number);
   }
 
   // show quantity modul on page responsive!------------------------------------

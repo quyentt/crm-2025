@@ -149,9 +149,9 @@
               </a>
             </div>
             <!-- siderbar menu  item -->
-            <div class="sidebar-menu-item active">
+            <div class="sidebar-menu-item">
               <a
-                class="sidebar-menu-header"
+                class="sidebar-menu-header collapsed"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapse1"
                 href="javascrip:void(0)"
@@ -163,12 +163,12 @@
                 <i class="fal fa-chevron-down item-arrow-icon down"></i>
               </a>
               <div
-                class="sidebar-menu-sub collapse show"
+                class="sidebar-menu-sub collapse"
                 id="collapse1"
                 data-bs-parent="#sidebar-menu"
               >
                 <div class="sidebar-menu-sub-content">
-                  <a class="active" href="#">Thông tin chung</a>
+                  <a class="" href="#">Thông tin chung</a>
                   <a href="#">Nhập điểm theo lớp học phần</a>
                   <a href="#">Điểm danh theo lớp học phần</a>
                   <a href="#">Tra cứu hồ sơ sinh viên</a>
@@ -234,377 +234,278 @@
         </div>
       </div>
       <div class="main-content">
-        <div class="quick-action">
-          <div class="welcome">Chào mừng bạn!</div>
-          <div class="quick-acction-title">Danh sách vai trò</div>
-          <div class="action-group">
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
-              </div>
-              <a
-                href="kehoach-namhoc/kehoach-khoahoc-chitiet.html"
-                data-position="0"
-                class="action-box feature-box"
-                data-bg="7"
-              >
-                <div class="icon">
-                  <img src="kehoach-namhoc/icon/CSDL-hocphan.svg" alt="" />
+        <div class="dashboard-content">
+          <div class="quick-action">
+            <div class="welcome">Chào mừng bạn!</div>
+            <div class="quick-acction-title">Danh sách vai trò</div>
+            <div class="action-group">
+              <!-- <div class="item">
+                <div class="pinned">
+                  <i class="fa-solid fa-heart"></i>
+                  <div class="alert">Bỏ yêu thích</div>
                 </div>
-                <div class="feature-name">Cơ sở dữ liệu học phần</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
+                <a
+                  href="kehoach-namhoc/kehoach-khoahoc-chitiet.html"
+                  data-position="0"
+                  class="action-box feature-box"
+                  data-bg="7"
+                >
+                  <div class="icon">
+                    <img src="kehoach-namhoc/icon/CSDL-hocphan.svg" alt="" />
+                  </div>
+                  <div class="feature-name">Cơ sở dữ liệu học phần</div>
+                </a>
+              </div> -->
+              <div class="item">
+                <a
+                  href="#"
+                  data-position="0"
+                  class="action-box feature-box"
+                  data-bg="7"
+                >
+                  <div class="icon">
+                    <i class="fa-light fa-chalkboard-user"></i>
+                  </div>
+                  <div class="feature-name">Giảng viên</div>
+                </a>
               </div>
-              <a
-                href="giadinh/giadinh-chitiet.html"
-                data-position="0"
-                class="action-box feature-box"
-                data-bg="7"
-              >
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <div class="feature-name">Kết quả học tập</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
+              <div class="item">
+                <a
+                  href="#"
+                  data-position="0"
+                  class="action-box feature-box"
+                  data-bg="7"
+                >
+                  <div class="icon">
+                    <i class="fa-light fa-building-user"></i>
+                  </div>
+                  <div class="feature-name">Trưởng khoa</div>
+                </a>
               </div>
-              <a
-                href="luanvan-luanan/luanvan-chitiet.html"
-                data-position="3"
-                class="action-box feature-box"
-                data-bg="7"
-              >
-                <div class="icon">
-                  <img src="luanvan-luanan/icon/dexuat-hdbv.svg" alt="" />
-                </div>
-                <div class="feature-name">Đề xuất Hội đồng bảo vệ</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
+              <div class="item">
+                <a
+                  href="nhansu/nhansu-chitiet.html"
+                  data-position="0"
+                  class="action-box feature-box"
+                  data-bg="7"
+                >
+                  <div class="icon">
+                    <i class="fa-light fa-users-gear"></i>
+                  </div>
+                  <div class="feature-name">Nhân sự</div>
+                </a>
               </div>
-              <a
-                href="luanvan-luanan/luanvan-chitiet.html"
-                data-position="4"
-                class="action-box feature-box"
-              >
-                <div class="icon">
-                  <img src="luanvan-luanan/icon/duyethoidong.svg" alt="" />
-                </div>
-                <div class="feature-name">Duyệt Hội đồng bảo vệ</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
-              </div>
-              <a
-                href="Thongke/thongke-chitiet.html"
-                data-position="0"
-                class="action-box feature-box"
-              >
-                <div class="icon">
-                  <img src="Thongke/icon/quymo-nguoihoc.svg" alt="" />
-                </div>
-                <div class="feature-name">Thống kê quy mô người học</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
-              </div>
-              <a
-                href="Thongke/thongke-chitiet.html"
-                data-position="1"
-                class="action-box feature-box"
-              >
-                <div class="icon">
-                  <img src="Thongke/icon/quymo-giangvien.svg" alt="" />
-                </div>
-                <div class="feature-name">Thống kê quy mô giảng viên</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
-              </div>
-              <a
-                href="luanvan-luanan/luanvan-chitiet.html"
-                data-position="0"
-                class="action-box feature-box"
-              >
-                <div class="icon">
-                  <img src="luanvan-luanan/icon/kehoach-doan.svg" alt="" />
-                </div>
-                <div class="feature-name">Kế hoạch đồ án - khóa luận - LV</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
-              </div>
-              <a
-                href="luanvan-luanan/luanvan-chitiet.html"
-                data-position="1"
-                class="action-box feature-box"
-              >
-                <div class="icon">
-                  <img src="luanvan-luanan/icon/giaodetai.svg" alt="" />
-                </div>
-                <div class="feature-name">Giao đề tài</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Bỏ yêu thích</div>
-              </div>
-              <a
-                href="luanvan-luanan/luanvan-chitiet.html"
-                data-position="2"
-                class="action-box feature-box"
-              >
-                <div class="icon">
-                  <img src="luanvan-luanan/icon/duyetdetai.svg" alt="" />
-                </div>
-                <div class="feature-name">Duyệt Giao đề tài</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
-            </div>
-            <div class="item">
-              <div class="pinned">
-                <i class="fa-solid fa-heart"></i>
-                <div class="alert">Xóa chức năng khỏi trang chủ</div>
-              </div>
-              <a href="chucnang.html" class="action-box feature-box">
-                <div class="icon">
-                  <i class="fas fa-users-gear"></i>
-                </div>
-                <div class="feature-name">Quản ly nhóm</div>
-              </a>
             </div>
           </div>
-        </div>
-        <div class="for-u-today">
-          <div class="title-main">For you today</div>
-          <div class="today-group">
-            <div class="item">
-              <div class="card today-card today-card-1">
-                <div class="card-header">
-                  <div class="title">
-                    <div class="icon">
-                      <i class="fas fa-users-gear"></i>
+          <div class="for-u-today">
+            <div class="title-main">Thông tin chung</div>
+            <div class="today-group">
+              <div class="item">
+                <div class="card today-card today-card-1">
+                  <div class="card-header">
+                    <div class="title">
+                      <div class="icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                      </div>
+                      <div class="feature-name text-uppercase">
+                        Bản tin nội bộ trường
+                      </div>
                     </div>
-                    <div class="feature-name">Quản ly nhóm</div>
+                    <div class="dropdown">
+                      <div class="dropdow-label" data-bs-toggle="dropdown">
+                        <i class="fal fa-ellipsis"></i>
+                      </div>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="dropdown">
-                    <div class="item" data-bs-toggle="dropdown">
-                      <i class="fal fa-ellipsis"></i>
-                    </div>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Another action</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          >Something else here</a
+                  <div class="card-body">
+                    <div class="dashboard-tinnoibo">
+                      <div class="item">
+                        <a href="#" class="label label-sukien">Sự kiện</a>
+                        <a href="#" class="title">
+                          Ngày hội việc làm 2025 sẽ tổ chức tại sàn A-15/06
+                        </a>
+                      </div>
+                      <div class="item">
+                        <a href="#" class="label label-thongbao">Thông báo</a>
+                        <a href="#" class="title">
+                          Thay đổi thời khóa biểu học kỳ hè ( Khóa CNTT)
+                        </a>
+                      </div>
+                      <div class="item">
+                        <a href="#" class="label label-tingiangvien"
+                          >Tin giảng viên</a
                         >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body">
-                  Remind a team member to complete pending tasks. Member to
-                  complete pending tasks.
-                </div>
-                <div class="card-footer">
-                  <div class="user-info">
-                    <div class="avatar">
-                      <img src="assets/images/avatar.jpg" />
-                    </div>
-                    <div>
-                      <div class="name">Nguyễn Thị Bích</div>
-                      <div class="task-count">4 tasks</div>
+                        <a href="#" class="title">
+                          PGS,TS nguyễn Văn B nhận giải thưởng KHCN cấp bộ
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <a href="#" class="view-all">View all</a>
+                  <div class="card-footer">
+                    <div class="line-1 bg-f1"></div>
+                    <a href="#" class="view-all">Xem tất cả</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="card today-card today-card-2">
-                <div class="card-header">
-                  <div class="title">
-                    <div class="icon">
-                      <i class="fas fa-users-gear"></i>
+              <div class="item">
+                <div class="card today-card today-card-2">
+                  <div class="card-header">
+                    <div class="title">
+                      <div class="icon">
+                        <i class="fas fa-users-gear"></i>
+                      </div>
+                      <div class="feature-name">NHÂN SỰ QUẢN LÝ</div>
                     </div>
-                    <div class="feature-name">Quản ly nhóm</div>
-                  </div>
-                  <div class="dropdown">
-                    <div class="item" data-bs-toggle="dropdown">
-                      <i class="fal fa-ellipsis"></i>
-                    </div>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Another action</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          >Something else here</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body">
-                  Remind a team member to complete pending tasks. Member to
-                  complete pending tasks.
-                </div>
-                <div class="card-footer">
-                  <div class="user-info">
-                    <div class="avatar">
-                      <img src="assets/images/avatar.jpg" />
-                    </div>
-                    <div>
-                      <div class="name">Nguyễn Thị Bích</div>
-                      <div class="task-count">4 tasks</div>
+                    <div class="dropdown">
+                      <div class="dropdow-label" data-bs-toggle="dropdown">
+                        <i class="fal fa-ellipsis"></i>
+                      </div>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  <a href="#" class="view-all">View all</a>
+                  <div class="card-body">
+                    <div class="dashboard-nhansuquanly">
+                      <div class="item">
+                        <div class="left">
+                          <div class="avatar">
+                            <img src="assets/images/avatar.jpg" />
+                          </div>
+                          <div class="meta">
+                            <a href="#" class="name">Nguyễn Thị Bích</a>
+                            <a href="#" class="link"
+                              ><i class="fa-light fa-envelope-open"></i>
+                              <span>b.nguyen@univ.edu</span>
+                            </a>
+                            <a href="tel:0123456789" class="link"
+                              ><i class="fa-light fa-phone"></i>
+                              <span>0123456789</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="right">
+                          <div>
+                            <div class="link">
+                              <i class="fa-light fa-chalkboard-user"></i>
+                              <span>Khoa CNTT</span>
+                            </div>
+                            <div class="link">
+                              <i class="fa-light fa-screen-users"></i>
+                              <span>Tên VT</span>
+                            </div>
+                            <a href="#" class="link">
+                              <i class="fa-light fa-briefcase"></i>
+                              <span>Giao việc</span>
+                            </a>
+                          </div>
+                          <button class="btn-detail">
+                            <i class="fa-light fa-chevron-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="left">
+                          <div class="avatar">
+                            <img src="assets/images/avatar.jpg" />
+                          </div>
+                          <div class="meta">
+                            <a href="#" class="name">Nguyễn Thị Bích</a>
+                            <a href="#" class="link"
+                              ><i class="fa-light fa-envelope-open"></i>
+                              <span>b.nguyen@univ.edu</span>
+                            </a>
+                            <a href="tel:0123456789" class="link"
+                              ><i class="fa-light fa-phone"></i>
+                              <span>0123456789</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="right">
+                          <div>
+                            <div class="link">
+                              <i class="fa-light fa-chalkboard-user"></i>
+                              <span>Khoa CNTT</span>
+                            </div>
+                            <div class="link">
+                              <i class="fa-light fa-screen-users"></i>
+                              <span>Tên VT</span>
+                            </div>
+                            <a href="#" class="link">
+                              <i class="fa-light fa-briefcase"></i>
+                              <span>Giao việc</span>
+                            </a>
+                          </div>
+                          <button class="btn-detail">
+                            <i class="fa-light fa-chevron-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="left">
+                          <div class="avatar">
+                            <img src="assets/images/avatar.jpg" />
+                          </div>
+                          <div class="meta">
+                            <a href="#" class="name">Nguyễn Thị Bích</a>
+                            <a href="#" class="link"
+                              ><i class="fa-light fa-envelope-open"></i>
+                              <span>b.nguyen@univ.edu</span>
+                            </a>
+                            <a href="tel:0123456789" class="link"
+                              ><i class="fa-light fa-phone"></i>
+                              <span>0123456789</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="right">
+                          <div>
+                            <div class="link">
+                              <i class="fa-light fa-chalkboard-user"></i>
+                              <span>Khoa CNTT</span>
+                            </div>
+                            <div class="link">
+                              <i class="fa-light fa-screen-users"></i>
+                              <span>Tên VT</span>
+                            </div>
+                            <a href="#" class="link">
+                              <i class="fa-light fa-briefcase"></i>
+                              <span>Giao việc</span>
+                            </a>
+                          </div>
+                          <button class="btn-detail">
+                            <i class="fa-light fa-chevron-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="line-1 bg-f1"></div>
+                    <a href="#" class="view-all">Xem tất cả</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="card today-card today-card-3">
-                <div class="card-header">
-                  <div class="title">
-                    <div class="icon">
-                      <i class="fas fa-users-gear"></i>
-                    </div>
-                    <div class="feature-name">Quản ly nhóm</div>
-                  </div>
-                  <div class="dropdown">
-                    <div class="item" data-bs-toggle="dropdown">
-                      <i class="fal fa-ellipsis"></i>
-                    </div>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Another action</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          >Something else here</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body">
-                  Remind a team member to complete pending tasks. Member to
-                  complete pending tasks.
-                </div>
-                <div class="card-footer">
-                  <div class="user-info">
-                    <div class="avatar">
-                      <img src="assets/images/avatar.jpg" />
-                    </div>
-                    <div>
-                      <div class="name">Nguyễn Thị Bích</div>
-                      <div class="task-count">4 tasks</div>
-                    </div>
-                  </div>
-                  <a href="#" class="view-all">View all</a>
-                </div>
-              </div>
+              <!--  -->
             </div>
           </div>
         </div>

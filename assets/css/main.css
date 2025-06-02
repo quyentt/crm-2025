@@ -297,6 +297,7 @@ input:focus-visible {
   border: 1px solid #f5f5f5;
   background: #fff;
   box-shadow: 0px 4px 16px 0px rgba(196, 206, 214, 0.25);
+  height: 100%;
 }
 
 .today-card::before {
@@ -3943,7 +3944,7 @@ a.other-action_item:hover {
   color: var(--color-link);
 }
 .sidebar-bars {
-  font-size: 22px;
+  font-size: 24px;
   margin-right: 22px;
   color: white;
   cursor: pointer;
@@ -4126,4 +4127,168 @@ a.other-action_item:hover {
 }
 .sidebar-menu-header:not(.collapsed) {
   background: rgba(26, 113, 232, 0.1);
+}
+
+.dashboard-content .quick-action {
+  background: transparent;
+}
+.dashboard-content .today-card .card-header .title .feature-name {
+  font-weight: 800;
+}
+
+.today-group .dashboard-tinnoibo .item {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.dashboard-tinnoibo .item:last-child {
+  margin-bottom: 0;
+}
+.dashboard-tinnoibo .title {
+  color: var(--color-main);
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.dashboard-tinnoibo .label {
+  background: var(--color-main);
+  position: relative;
+  color: var(--color-white);
+  padding-left: 6px;
+
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: inline-block;
+}
+.dashboard-tinnoibo .label::after {
+  top: 0;
+
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid var(--color-main);
+}
+.dashboard-content .today-card .card-footer .view-all {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.dropdow-label {
+  padding-top: 6px;
+  font-size: 20px;
+}
+
+.dashboard-tinnoibo .label.label-sukien {
+  background: var(--color-link);
+}
+.dashboard-tinnoibo .label.label-sukien::after {
+  border-left: 10px solid var(--color-link);
+}
+.dashboard-tinnoibo .label.label-thongbao {
+  background: var(--color-red);
+}
+.dashboard-tinnoibo .label.label-thongbao::after {
+  border-left: 10px solid var(--color-red);
+}
+.dashboard-nhansuquanly {
+  display: flex;
+  flex-direction: column;
+}
+.today-group .dashboard-nhansuquanly .item {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  border-bottom: solid 1px var(--color-border);
+}
+.today-group .dashboard-nhansuquanly .item:first-child {
+  padding-top: 0;
+}
+.today-group .dashboard-nhansuquanly .item:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+.dashboard-nhansuquanly .item .left {
+  display: flex;
+  gap: 10px;
+  width: 50%;
+  align-items: flex-start;
+}
+.dashboard-nhansuquanly .item .avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.dashboard-nhansuquanly .item .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dashboard-nhansuquanly .item .name {
+  color: var(--color-main);
+
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.dashboard-nhansuquanly .item .link {
+  color: var(--color-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+.dashboard-nhansuquanly .item .link:not(:last-child) {
+  margin-bottom: 15px;
+}
+.dashboard-nhansuquanly .item .link i {
+  font-size: 10px;
+  margin-top: 3px;
+}
+.dashboard-nhansuquanly .right {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  border-left: solid 1px var(--color-border);
+  padding-left: 20px;
+}
+.dashboard-nhansuquanly .btn-detail {
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  width: 18px;
+  background: transparent;
+}
+.today-group .dashboard-nhansuquanly .item:hover .name {
+  color: var(--color-link);
+}
+.today-group .dashboard-nhansuquanly .item:hover .btn-detail {
+  background: var(--color-link);
+  color: var(--color-white);
+}
+.today-group .dashboard-nhansuquanly .item:hover a.link:hover {
+  color: var(--color-link);
+}
+.dashboard-nhansuquanly .item .meta {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+}
+.dashboard-nhansuquanly .item .link span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  display: inline-block;
+  min-width: 0;
+  line-height: 14px;
 }
