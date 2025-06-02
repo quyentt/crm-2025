@@ -4241,6 +4241,12 @@ a.other-action_item:hover {
 
   font-weight: 700;
   margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
 .dashboard-nhansuquanly .item .link {
   color: var(--color-text);
@@ -4294,4 +4300,10 @@ a.other-action_item:hover {
   display: inline-block;
   min-width: 0;
   line-height: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }

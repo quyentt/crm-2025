@@ -74,6 +74,9 @@
 }
 
 @media (max-width: 1440px) {
+  .account-group {
+    border-left: none;
+  }
   .action-inner {
     right: 50%;
   }
