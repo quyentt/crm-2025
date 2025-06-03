@@ -382,6 +382,11 @@
   }
 }
 
+@media (max-width: 990px) {
+  .post-content {
+    padding-left: 25px;
+  }
+}
 @media (max-width: 820px) {
   .main-wrap {
     padding-top: 56px;
@@ -508,6 +513,9 @@
 }
 
 @media (max-width: 576px) {
+  .post-page-wrap {
+    padding: 15px;
+  }
   .account-group .item i {
     font-size: 20px;
     color: var(--color-text);

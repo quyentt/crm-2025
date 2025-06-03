@@ -394,14 +394,13 @@ textarea.form-control {
 .checkbox-green input:checked ~ .checkmark {
   background: #28a745;
 }
-.checkbox-outline-white .checkmark{
+.checkbox-outline-white .checkmark {
   background-color: transparent;
 }
 .checkbox-outline-white input:checked ~ .checkmark {
   background: #fff;
 }
 .checkbox-outline-white input:checked ~ .checkmark i {
-
   color: var(--color-link);
 }
 .line-1 {
@@ -483,6 +482,8 @@ textarea.form-control {
   border-radius: 4px;
   overflow: hidden;
   border: solid 1px var(--color-border);
+  width: fit-content;
+  min-width: 100%;
 }
 
 .select-hide {
@@ -502,6 +503,7 @@ textarea.form-control {
 .custom-select.custom-select-sm .select-selected,
 .custom-select.custom-select-sm .select-items div {
   height: 28px;
+  white-space: nowrap;
 }
 
 /* feature box */
@@ -884,12 +886,12 @@ textarea.form-control {
 .bg-f1 {
   background: #f1f1f1;
 }
-.flex-1{
+.flex-1 {
   flex: 1;
 }
-.h-100p{
+.h-100p {
   height: 100px;
 }
-.rounded-full{
+.rounded-full {
   border-radius: 100%;
 }
