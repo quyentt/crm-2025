@@ -156,22 +156,24 @@ $(document).ready(function () {
         }
       });
     });
-  // Lấy slide index từ URL (?slide=0)
-  const params = new URLSearchParams(window.location.search);
-  const slideIndex = parseInt(params.get("slide"), 10);
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const slideIndex = parseInt(params.get("slide"), 10);
 
-  // Nếu có tham số hợp lệ, slide đến đó
-  if (!isNaN(slideIndex)) {
-    swiper2.slideTo(slideIndex);
+    if (!isNaN(slideIndex) && typeof swiper2 !== "undefined") {
+      swiper2.slideTo(slideIndex);
 
-    // Xóa ?slide=... khỏi URL sau khi xử lý xong, mà không reload
-    const url = new URL(window.location.href);
-    url.searchParams.delete("slide");
+      // Xử lý xóa ?slide=... khỏi URL hiện tại
+      const currentURL = new URL(window.location.href);
+      currentURL.searchParams.delete("slide");
 
-    // Cập nhật URL hiển thị mà không load lại trang
-    window.history.replaceState({}, document.title, url.pathname + url.search);
-  }
+      // Giữ nguyên pathname bao gồm cả crm-2025/
+      const newPath = currentURL.pathname + currentURL.search;
 
+      // Cập nhật URL trên trình duyệt mà không reload lại trang
+      window.history.replaceState({}, document.title, newPath);
+    }
+  });
   var swiperInwiper = new Swiper(".tab-header-nav", {
     watchSlidesProgress: true,
     spaceBetween: 0,
