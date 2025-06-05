@@ -163,15 +163,11 @@ $(document).ready(function () {
     if (!isNaN(slideIndex) && typeof swiper2 !== "undefined") {
       swiper2.slideTo(slideIndex);
 
-      // Xử lý xóa ?slide=... khỏi URL hiện tại
-      const currentURL = new URL(window.location.href);
-      currentURL.searchParams.delete("slide");
+      const url = new URL(window.location.href);
+      url.searchParams.delete("slide");
 
-      // Giữ nguyên pathname bao gồm cả crm-2025/
-      const newPath = currentURL.pathname + currentURL.search;
-
-      // Cập nhật URL trên trình duyệt mà không reload lại trang
-      window.history.replaceState({}, document.title, newPath);
+      // ✅ Dùng url.toString() để giữ nguyên full URL có cả repo-name
+      window.history.replaceState({}, document.title, url.toString());
     }
   });
   var swiperInwiper = new Swiper(".tab-header-nav", {
