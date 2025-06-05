@@ -166,7 +166,6 @@ $(document).ready(function () {
       const url = new URL(window.location.href);
       url.searchParams.delete("slide");
 
-      // ✅ Dùng url.toString() để giữ nguyên full URL có cả repo-name
       window.history.replaceState({}, document.title, url.toString());
     }
   });
