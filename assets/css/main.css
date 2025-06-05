@@ -4306,6 +4306,13 @@ a.other-action_item:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
+  color: #444;
+}
+.dashboard-nhansuquanly .item:hover .link span {
+  color: var(--color-text);
+}
+.dashboard-nhansuquanly .item:hover a.link:hover span {
+  color: var(--color-link);
 }
 .post-page-wrap {
   padding: 30px;

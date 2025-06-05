@@ -125,6 +125,12 @@ $(document).ready(function () {
       },
     },
   });
+  const repoName = "crm-2025";
+  const basePath =
+    window.location.pathname.split("/").filter(Boolean)[0] === repoName
+      ? `/${repoName}`
+      : "";
+
   document
     .querySelectorAll(".sidebar-menu-sub-content a[data-position]")
     .forEach((link) => {
@@ -136,13 +142,13 @@ $(document).ready(function () {
 
         if (isNaN(index) || !href) return;
 
-        // Xác định pathname hiện tại (VD: /nhansu/nhansu-chitiet.html)
-        const currentPath = window.location.pathname.replace(/\/+$/, ""); // bỏ dấu '/' cuối nếu có
-        const targetUrl = new URL(href, window.location.origin);
+        // So sánh path hiện tại với path của link
+        const currentPath = window.location.pathname.replace(/\/+$/, "");
+        // Tạo URL với basePath để trên GitHub Pages có thể dùng đúng repo-name
+        const targetUrl = new URL(href, window.location.origin + basePath);
         const targetPath = targetUrl.pathname.replace(/\/+$/, "");
 
         if (currentPath === targetPath) {
-          // Đã ở đúng trang, chỉ slide
           swiper2.slideTo(index);
 
           document
@@ -150,25 +156,25 @@ $(document).ready(function () {
             .forEach((el) => el.classList.remove("active"));
           this.classList.add("active");
         } else {
-          // Chưa ở đúng trang, thêm ?slide=X rồi chuyển hướng
           targetUrl.searchParams.set("slide", index);
           window.location.href = targetUrl.toString();
         }
       });
     });
-  document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const slideIndex = parseInt(params.get("slide"), 10);
 
-    if (!isNaN(slideIndex) && typeof swiper2 !== "undefined") {
-      swiper2.slideTo(slideIndex);
+  // Xử lý slide khi load trang
+  const params = new URLSearchParams(window.location.search);
+  const slideIndex = parseInt(params.get("slide"), 10);
 
-      const url = new URL(window.location.href);
-      url.searchParams.delete("slide");
+  if (!isNaN(slideIndex) && typeof swiper2 !== "undefined") {
+    swiper2.slideTo(slideIndex);
 
-      window.history.replaceState({}, document.title, url.toString());
-    }
-  });
+    const url = new URL(window.location.href);
+    url.searchParams.delete("slide");
+
+    window.history.replaceState({}, document.title, url.pathname + url.search);
+  }
+
   var swiperInwiper = new Swiper(".tab-header-nav", {
     watchSlidesProgress: true,
     spaceBetween: 0,
