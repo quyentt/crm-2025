@@ -110,6 +110,8 @@ $(document).ready(function () {
   var swiper2 = new Swiper(".content-slider", {
     initialSlide: dataPosition || 0,
     autoHeight: true,
+    observer: true,
+    observeParents: true,
     spaceBetween: 0,
     navigation: false,
     noSwipingClass: ["no-swiper"],
@@ -212,6 +214,7 @@ $(document).ready(function () {
         const currentTab = funcEle.querySelector("#" + dataTarget);
         if (currentTab) {
           currentTab.classList.add("show");
+          swiper2.updateAutoHeight(300);
         }
         btn.classList.add("active");
 

@@ -74,6 +74,13 @@
 }
 
 @media (max-width: 1440px) {
+  .traodoirieng-page .user-chat-nav {
+    width: 400px;
+  }
+  .quanly-nhansu-thongtincanhan-image {
+    width: 0;
+    display: none;
+  }
   .account-group {
     border-left: none;
   }
@@ -418,6 +425,12 @@
 }
 
 @media (max-width: 768px) {
+  .traodoirieng-page .user-chat-nav {
+    width: 100%;
+  }
+  .traodoirieng-page .user-chat-cont-wrap {
+    display: none;
+  }
   .inputs-3-col .item {
     width: calc((100% - 30px) / 2);
   }
@@ -513,6 +526,13 @@
 }
 
 @media (max-width: 576px) {
+  .quanly-nhansu-thongtincanhan-content {
+    flex-wrap: wrap;
+  }
+  .quanly-nhansu-thongtincanhan-content .info {
+    flex: auto;
+    width: 100%;
+  }
   .post-page-wrap {
     padding: 15px;
   }
